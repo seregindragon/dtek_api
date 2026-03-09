@@ -1,0 +1,26 @@
+[project]
+name = "dtek"
+version = "0.1.0"
+description = "DTEK Odesa — outage checker"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.40",
+    "loguru>=0.7",
+    "fastapi>=0.129.0",
+    "uvicorn>=0.41.0",
+    "requests>=2.32.5",
+    "ruff>=0.15.2",
+    "basedpyright>=1.38.1",
+    "mypy>=1.11",
+]
+
+[project.scripts]
+dtek-server = "dtek_api_server.dtek_api_server:main"
+dtek-cli    = "dtek_api_server.dtek_odessa:main"
+dtek-client = "dtek_clien.dtek_client:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]

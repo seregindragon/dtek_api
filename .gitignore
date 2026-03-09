@@ -1,0 +1,53 @@
+*.egg-info/
+__pycache__/
+.venv/
+debug_screenshots/
+# Ignore the .env file if it exists, which may contain sensitive information
+.env
+# Ignore the .vscode directory if it exists, which may contain user-specific settings
+.vscode/
+# Ignore the .pytest_cache directory if it exists, which may contain test cache files
+.pytest_cache/
+# Ignore the .mypy_cache directory if it exists, which may contain mypy cache files
+.mypy_cache/
+# Ignore the .coverage file if it exists, which may contain coverage data
+.coverage
+# Ignore what don't need will be publicly available
+dist/
+build/
+#standard ignore for python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+# Virtual env
+.venv/
+venv/
+
+# Playwright debug
+debug_screenshots/
+dtek_odessa.py
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
