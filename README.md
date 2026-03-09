@@ -6,7 +6,7 @@ Overview
 
 - Server: a FastAPI app using Playwright to query https://www.dtek-oem.com.ua/ua/shutdowns and extract outage information.
   - Source: `src/dtek_api_server/dtek_api_server.py`
-  - Endpoints: `/status`, `/status/all`, `/health`.
+  - Endpoints: `/status`, `/health`.
 - Client: a tiny helper script that queries the server.
   - Source: `src/dtek_clien/dtek_client.py`
 
@@ -59,7 +59,6 @@ Or run the module directly (this uses the `if __name__ == "__main__"` block in t
 python -m dtek_api_server.dtek_api_server
 ```
 
-Note: the project provides an entry-point script name `dtek-server` declared in `pyproject.toml`. In this repository the module path referenced by the entrypoint may be misaligned with the source (double-check `pyproject.toml` if `dtek-server` fails) — using uvicorn directly as shown above is the most reliable.
 
 API examples
 
@@ -67,12 +66,6 @@ API examples
 
 ```bash
 curl "http://127.0.0.1:8000/status?city=Odesa&street=Nebesnoi+Sotni+Ave&house=79B"
-```
-
-- Check all saved addresses:
-
-```bash
-curl http://127.0.0.1:8000/status/all
 ```
 
 - Health:

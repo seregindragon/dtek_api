@@ -3,14 +3,14 @@
 DTEK — electricity outage checker.
 
 Run:
-uv run src/dtek_check/dtek_api.py
-uvicorn dtek_check.dtek_api:app --host 0.0.0.0async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:async def fetch_status(city: str, street: str, house: str) -> dict[str, Any]: --port 8000
+    uvicorn dtek_api_server.dtek_api_server:app --host 0.0.0.0 --port 8000
+    python -m dtek_api_server.dtek_api_server
 """
 
 import asyncio
 import re
 from contextlib import asynccontextmanager
-from typing import Any, Dict, AsyncGenerator
+from typing import Any, AsyncGenerator
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
@@ -27,7 +27,7 @@ DEFAULT_CITY = "м. Одеса"
 
 SAVED_ADDRESSES: list[Any] = []
 
-state: Dict[str, Any] = {}
+state: dict[str, Any] = {}
 
 
 POWER_OFF_UK = "відсутня електроенергія"
@@ -39,7 +39,7 @@ DETAILS_UK_RE = r"(причина\s*[:–]|час початку|час відн
 
 # ── Lifespan ──────────────────────────────────────────────────────────────────
 @asynccontextmanager
-async def lifespan(app: FastAPI)-> Generator[None, Any, None]:
+async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("🚀 Starting browser...")
     playwright = await async_playwright().start()
     browser = await playwright.chromium.launch(

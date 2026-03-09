@@ -6,7 +6,6 @@ Files
 
 - `dtek_api_server.py` — main server implementation (FastAPI app). Key endpoints:
   - GET /status?city=&street=&house=
-  - GET /status/all
   - GET /health
 
 Requirements
