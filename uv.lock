@@ -153,26 +153,34 @@ name = "dtek"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "basedpyright" },
     { name = "fastapi" },
     { name = "loguru" },
-    { name = "mypy" },
     { name = "playwright" },
     { name = "requests" },
-    { name = "ruff" },
     { name = "uvicorn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "basedpyright" },
+    { name = "mypy" },
+    { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "basedpyright", specifier = ">=1.38.1" },
     { name = "fastapi", specifier = ">=0.129.0" },
     { name = "loguru", specifier = ">=0.7" },
-    { name = "mypy", specifier = ">=1.11" },
     { name = "playwright", specifier = ">=1.40" },
     { name = "requests", specifier = ">=2.32.5" },
-    { name = "ruff", specifier = ">=0.15.2" },
     { name = "uvicorn", specifier = ">=0.41.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "basedpyright", specifier = ">=1.38.1" },
+    { name = "mypy", specifier = ">=1.11" },
+    { name = "ruff", specifier = ">=0.15.2" },
 ]
 
 [[package]]

@@ -1,4 +1,4 @@
-dtek API server
+# dtek API server
 
 This folder contains a FastAPI server that uses Playwright to query DTEK shutdowns and expose status via HTTP.
 
@@ -43,4 +43,3 @@ Notes
 - The server creates a Playwright browser at lifespan startup and closes it at shutdown. Expect a few seconds delay on cold start while the browser boots.
 - If you run the server in an environment that blocks sandboxing, the code already sets `--no-sandbox` and disables automation detection flags.
 - If you see issues locating the form on the DTEK website, the page structure may have changed — the CSS selectors are defined at the top of `dtek_api_server.py` (CITY_SEL, STREET_SEL, HOUSE_SEL). Update them if necessary.
-

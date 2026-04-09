@@ -9,8 +9,9 @@ Run:
 
 import asyncio
 import re
+from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
-from typing import Any, AsyncGenerator
+from typing import Any
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
@@ -58,7 +59,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 app = FastAPI(
     title="DTEK API",
     description="Check electricity outages",
-    version="0.1.0",
+    version="0.0.1",
     lifespan=lifespan,
 )
 

@@ -42,8 +42,8 @@ SITE = "https://www.dtek-oem.com.ua/ua/shutdowns"
 
 ADDRESSES: list[dict[str, str]] = [
     #{"city": "м. Одеса", "street": "просп. небесної сотні", "house": "79Б"}#,
-    {"city": "м. Одеса", "street": "вул. Палія семена",     "house": "93"}#,
-    #{"city": "м. Одеса", "street": "вул. Кримська",         "house": "64"},
+    #{"city": "м. Одеса", "street": "вул. Палія семена",     "house": "93"}#,
+    {"city": "м. Одеса", "street": "вул. Кримська",         "house": "64"},
 ]
 
 CITY_SEL   = ".discon-input-wrapper input#city"
